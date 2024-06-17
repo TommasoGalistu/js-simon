@@ -31,7 +31,7 @@ let countdown = setInterval(function () {
         clearInterval(countdown);
         container.childNodes[1].textContent = 'Tempo scaduto! Ora inserisci i numeri.';
         for (let i = 0; i < caselleNumeri.length; i++) {
-            caselleNumeri[i].textContent = ''
+            caselleNumeri[i].classList.add('invisible')
         }
         contInput.classList.remove('invisible')
         inserisciRisposte()
@@ -72,12 +72,21 @@ function inserisciRisposte() {
 let punteggio = 0;
 // do il risultato al giocatore
 button.addEventListener('click', () => {
+    let arrInput = [];
+    let testo = '';
     for (let i = 0; i < selectValue.length; i++) {
         if(arrNumeri.includes(parseInt(selectValue[i].value))){
-            punteggio++
-            console.log(punteggio)
+            punteggio++;
+            testo += selectValue[i].value + ', ';
         }
     }
+    
+    
+    let testoFineGioco = document.createElement('h3');
+    testoFineGioco.append(`Punti totali: ${punteggio}. Hai indovinato i numero ${testo}`);
+    container.append(testoFineGioco);
+    contInput.classList.add('invisible');
+    
     
 });
 
