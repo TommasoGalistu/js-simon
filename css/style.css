@@ -11,8 +11,19 @@
 h3{
     margin-bottom: 3rem;
 }
+
 .number{
     margin: 2rem;
     padding: 2rem;
     background-color: red;
+}
+.contInput{
+    margin: 1rem;
+    
+}
+.invisible{
+    display: none;
+}
+select{
+    margin: 1rem;
 }
