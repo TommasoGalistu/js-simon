@@ -42,7 +42,7 @@ let countdown = setInterval(function () {
     }
 }, 1000);
 
-
+// aggiunta di risposte casuali nei select
 function inserisciRisposte() {
     // creo un array per mettere le risposte in disordine
     let array = [0, 1, 2, 3, 4];
@@ -56,23 +56,28 @@ function inserisciRisposte() {
         
         if(j === selectValue[0].length -1){
             selectValue[i][j].textContent = arrNumeri[array[k]]
+            selectValue[i][j].value = arrNumeri[array[k]]
             i++;
             j = 0;
             k = -1;
         }else{
             selectValue[i][j].textContent = arrNumeri[array[k]]
+            selectValue[i][j].value = arrNumeri[array[k]]
         }
         
     }
 }
 
-console.log(selectValue[0].length)
 
+let punteggio = 0;
 // do il risultato al giocatore
 button.addEventListener('click', () => {
-
-
-
-
+    for (let i = 0; i < selectValue.length; i++) {
+        if(arrNumeri.includes(parseInt(selectValue[i].value))){
+            punteggio++
+            console.log(punteggio)
+        }
+    }
+    
 });
 
