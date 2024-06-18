@@ -16,7 +16,7 @@ while (arrNumeri.length < 5) {
     }
 };
 
-console.log(arrNumeri)
+
 // caselle numeri in array
 let caselleNumeri = document.querySelectorAll('.number');
 
@@ -24,7 +24,7 @@ let caselleNumeri = document.querySelectorAll('.number');
 container.childNodes[1].textContent = `Memorizza la posizione dei numeri in 30 secondi e rimettili nello stesso ordine`;
 
 // setto la variabile secondi e creo il countdown
-let secondi = 1;
+let secondi = 30;
 let countdown = setInterval(function () {
     // quando i secondi arrivano a 0 parte il gioco
     if (secondi === 0) {
@@ -83,7 +83,7 @@ button.addEventListener('click', () => {
     
     
     let testoFineGioco = document.createElement('h3');
-    testoFineGioco.append(`Punti totali: ${punteggio}. Hai indovinato i numero ${testo}`);
+    testoFineGioco.append(`Punti totali: ${punteggio}. Hai indovinato il/i numero/i ${testo}`);
     container.append(testoFineGioco);
     contInput.classList.add('invisible');
     
